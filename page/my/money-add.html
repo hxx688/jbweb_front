@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鸿宝财富</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--icon-->
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">账户充值</h1>
+		</header>
+		<div class="mui-content" style="padding-top:44px;">
+        	<div class="money-add-top">
+            	<div class="money-add-top-box">
+                	<div class="money-add-top-title">用户：</div><div class="money-add-top-info"><span class="realname"></span><span class="my-username">(00000000)</span></div>
+                 </div>
+            	<div class="money-add-top-box">
+                	<div class="money-add-top-title">余额：</div><div class="money-add-top-info my-amount">0.00</div>&nbsp;元
+                </div>
+            </div>
+			<ul class="buy-number product-buy-number">
+				<li class="on"><span class="buy-number-info"><font class="money1">5000</font>&nbsp;元</span></li>
+				<li><span class="buy-number-info"><font class="money2">10000</font>&nbsp;元</span></li>
+				<li class="buy-number-li-input"><input max="9999" type="number" class="input-buy-number" placeholder="其他数额"></li>
+			</ul>
+			
+            <ul class="mui-table-view" style="margin-left: 10px;margin-right: 10px;">
+                    <li class="mui-table-view-cell">
+                        <div class="mui-collapse-content">
+                            <div class="mui-input-group">
+                                <div class="mui-input-row">
+                                    <label>手机号</label>
+                                    <input type="text" id="phone" class="mui-input-clear" placeholder="请输入注册手机号">
+                                </div>
+                                <div class="mui-input-row">
+                                    <label>身份证号</label>
+                                    <input type="text" id="idcard" class="mui-input-clear" placeholder="请输入身份证号">
+                                </div>
+                              	<div class="mui-input-row">
+					                <label>银行卡号</label>
+					                <input type="text" id="account" class="mui-input-clear" placeholder="请输入银行卡号">
+					            </div>
+					           <div class="mui-input-row">
+					                <label>开户名</label>
+					                <input type="text" id="kaihuming" class="mui-input-clear" placeholder="请输入开户名">
+					            </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            <div class="mui-content-padded" style=" margin:10 10px;">
+                <button type="button" onclick="next()" class="mui-btn mui-btn-primary mui-btn-block">立即充值</button>
+            </div>
+        </div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-1.11.2.min.js"></script>
+	<script src="../../js/app.js"></script>
+	<script src="../../js/config.js"></script>
+    <script src="../../js/page/my/money-add.js"></script>
+    
+</html>

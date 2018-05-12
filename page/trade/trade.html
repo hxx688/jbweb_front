@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>交易_鸿宝财富</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--icon-->
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<style>
+			.charts_area{
+				background:none; 
+				color:#eee; 
+				font-size:24px; 
+				height:320px; 
+				line-height:320px; 
+				text-align:center;
+		
+			}
+		</style>
+	</head>
+	<body style="overflow-x:hidden;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><span class="p-title">产品名称</span><!--<span class="mui-icon mui-icon-arrowdown"></span>--></h1>
+            <div class="mui-pull-right trade-price-begin">
+            	<span class="trade-price-begin-title">开盘</span>
+                <span class="trade-price-begin-number open-price">0</span>
+            </div>
+            <ul class="trade-product-list" style="display:none;">
+            	<li><a>产品代用名</a></li>
+            	<li><a>产品名称</a></li>
+            	<li><a>产品代用名</a></li>
+            	<li><a>产品名称</a></li>
+            </ul>
+		</header>
+		<div class="mui-content" style="padding-top: 44px;overflow-x:hidden;">
+        	<div class="trade-price">
+            	<div class="trade-price-lowest">
+                	<span class="trade-price-title">最低</span>
+                	<span class="trade-price-number low-price">0</span>
+                </div>
+            	<div class="trade-price-highest">
+                	<span class="trade-price-title">最高</span>
+                	<span class="trade-price-number high-price">0</span>
+                </div>
+                <span class="trade-price-up now-price">0</span>
+            </div>
+            <div style="padding:10px;overflow-x:hidden;">
+				<div id="segmentedControl" class="mui-segmented-control" style="z-index: 9999;">
+					<a class="mui-control-item mui-active" href="#item1">分时</a>
+					<a class="mui-control-item" href="#item4">5分钟</a>
+					<a class="mui-control-item" href="#item5">30分钟</a>
+					<a class="mui-control-item" href="#item7">1小时</a>
+					<!--<a class="mui-control-item" href="#item3">周K</a>-->
+					<span class="mui-control-item">
+                        <select class="select-none">
+                            <option value="item-1" disabled selected>其他</option>
+                            <option value="item-2">日K</option>
+                            <option value="item-3">周K</option>
+                        </select>
+                    </span>
+				</div>
+			</div>
+			<div>
+				<div id="item1" class="mui-control-content mui-active">
+					<div id="main" class="charts_area">
+						
+					</div>
+				</div>
+				<div id="item4" class="mui-control-content">
+					<div id="main4" class="charts_area" >
+						
+					</div>
+				</div>		
+				<div id="item5" class="mui-control-content">
+					<div id="main5" class="charts_area" >
+						
+					</div>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<div id="main2" class="charts_area" >
+						
+					</div>
+				</div>
+				<div id="item3" class="mui-control-content">
+					<div id="main3" class="charts_area" >
+						
+					</div>
+				</div>	
+				<div id="item7" class="mui-control-content">
+					<div id="main7" class="charts_area" >
+						
+					</div>
+				</div>
+			</div>
+            <ul class="mui-table-view trade-buy" style=" margin-bottom:3px;">
+                
+            </ul>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-1.11.2.min.js"></script>
+	<script src="../../js/app.js"></script>
+	<script src="../../js/config.js"></script>
+	<script src="../../libs/echarts.min.js"></script>
+	<script src="../../js/page/trade/trade.js"></script>
+	
+</html>

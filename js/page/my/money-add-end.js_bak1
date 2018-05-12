@@ -1,0 +1,95 @@
+var money;
+mui.init({
+	beforeback: function() {
+		var wobj = plus.webview.getWebviewById("lf_my.html");
+        mui.fire(wobj,'myEvent');
+        wobj.show();
+		return true;
+	}
+});
+
+mui.plusReady(function() {
+	var self = plus.webview.currentWebview();
+	money = self.money;
+	document.querySelector(".index-my-money-number").textContent = money;
+});
+
+function commit(){
+	var state = app.getState(); //获取登陆信息
+	var payType = '';
+	var payModel = "";
+	var payCode = "";
+	var checkVal = "";
+	var radio = document.getElementsByName("radioPayType");
+    for (i=0; i<radio.length; i++) {
+        if (radio[i].checked) {
+            checkVal = radio[i].value;
+        }
+    }
+
+	payType = "9";
+    if(checkVal.indexOf("|") != -1) {
+            var strs = checkVal.split("|");
+            if(strs[0] == "shoufu"){
+                payType = "10";
+                payModel = strs[1] ;
+                if(checkVal.indexOf("bank")!=-1) {
+                    payCode = strs[2];
+                }
+            }else if (strs[0] == "yida") {
+            	payType = "9"
+            	payModel= strs[1] ;
+            } else if (strs[0] == "mazhifu") {
+            	payType = "11"
+            	payModel= strs[1] ;
+            }else {
+            	payType = "9"
+            }
+
+
+        }
+
+	if(!money || money <= 0){
+		mui.toast("金额应大于0");
+		return;
+	}
+
+	var obj = {id:state.user.id,money:money,pay_type:payType, payModel: payModel, payCode: payCode};
+	if(payType == '0'){
+		app.ajax("lf_prepay/url",obj, function(param) {
+			// 跳转到支付url
+			mui.openWindow({url:param});
+		});
+	}else if(payType == '1'){
+		app.ajax("lf_prepay_sz/url",obj, function(param) {
+			// 跳转到支付url
+			mui.openWindow({url:"shanpay.html",extras: {param:param}});
+		});
+	}else if(payType == '2'){ // 环球付
+		app.ajax("lf_prepay_hqf/url",obj, function(param) {
+			// 跳转到支付url
+			mui.openWindow({url:"shanpay.html",extras: {param:param}});
+		});
+	}else if(payType == '9'){ // 环球付
+        app.ajax("lf_prepay_yida/url",obj, function(param) {
+            // 跳转到支付url
+            mui.openWindow({url:"shanpay.html",extras: {param:param}});
+        });
+	}else if(payType == '10'){ // 环球付
+        app.ajax("lf_prepay_shoujie/url",obj, function(param) {
+            // 跳转到支付url
+            mui.openWindow({url:"shanpay.html",extras: {param:param}});
+        });
+
+    }else if(payType == '11'){ // 环球付
+        app.ajax("lf_prepay_mazhifu/url",obj, function(param) {
+            // 跳转到支付url
+            mui.openWindow({url:"shanpay.html",extras: {param:param}});
+        });
+
+    }
+
+	else{
+		mui.toast("支付方式选择错误");
+	}
+}

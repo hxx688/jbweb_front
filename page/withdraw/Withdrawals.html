@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>账户提现_鸿宝财富</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--icon-->
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<link href="../../css/mui.picker.css" rel="stylesheet" />
+		<link href="../../css/mui.poppicker.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">账户提现</h1>
+		</header>
+		<div class="mui-content" style="padding-top:44px;">
+        	<div class="money-add-top">
+            	<div class="money-add-top-box">
+                	<div class="money-add-top-title">用户：</div><div class="money-add-top-info"><span class="realname"></span><span class="my-username">(00000000)</span></div>
+                 </div>
+            	<div class="money-add-top-box">
+                	<div class="money-add-top-title">余额：</div><div class="money-add-top-info my-amount">0.00</div>&nbsp;元
+                </div>
+            </div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <div class="mui-collapse-content">
+                        <div class="mui-input-group">
+                            <div class="mui-input-row">
+                                <label>提现金额</label>
+                                <input type="number" id="cashmoney" class="mui-input-row-right-input cashmoney" placeholder="请输入提现金额">
+                                <span class="mui-input-row-right-span">元</span>
+                            </div>
+                            <div class="mui-input-row">
+                                <label>手续费</label>
+                                <span class="mui-input-group-span"><span class="pay-fee"></span>&nbsp;元</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="withdrawals-explain">
+            	<span>注：</span>
+            	<p>
+                	1.提现金额必须是100整数，每天只能提现一次<br/>
+					2.出金时间周一至周五9:00 — 16:00 T+1，手续费收取<font class="cashfee">1</font>%，实际到帐为扣除手续费后的金额，提现因客户自己填写户名和卡号错误的，银联退汇时间为3-7个工作日
+                </p>
+            </div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <div class="mui-collapse-content">
+                        <div class="mui-input-group">
+                            <div class="mui-input-row">
+                                <label>卡号</label>
+                                <input type="hidden" id="ka_id" value=""/>
+                                <input type="number" id="my-account" class="mui-input-clear" placeholder="请输入借记卡号">
+                            </div>
+                            <div class="mui-input-row">
+                                <label>户名</label>
+                                <input type="text" disabled="disabled" id="my-name" class="mui-input-clear" placeholder="请输入户名">
+                            </div>
+                            <div class="mui-input-row">
+                                <label>开户行</label>
+                                <a class="mui-input-group-a" id='showUserPicker'><p id="my-bank" style="color:#999;">选择开户行</p></a>
+                                <span class="mui-icon iconfont icon-right"></span>
+                            </div>
+                            <div class="mui-input-row">
+                                <label>身份证号码</label>
+                                <input type="text" id="idcard" class="mui-input-clear" placeholder="请输入身份证号码">
+                            </div>
+                            <div class="mui-input-row">
+                                <label>地区</label>
+                                <a class="mui-input-group-a" id='showCityPicker3'><p id="my-area" style="color:#999;">选择地区</p></a>
+                                <span class="mui-icon iconfont icon-right"></span>
+                            </div>
+                            <div class="mui-input-row">
+                                <label>支行</label>
+                                <input type="text" id="zhihang" class="mui-input-clear" placeholder="请输入支行">
+                            </div>
+                            <div class="mui-input-row">
+                                <label>绑定手机</label>
+                                <input type="text" class="mui-input-clear bindmobile"　id="bindmobile" placeholder="请输入绑定手机">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="mui-table-view" style="margin-top:10px;">
+                <li class="mui-table-view-cell">
+                    <div class="mui-collapse-content">
+                        <div class="mui-input-group">
+                            <div class="mui-input-row">
+                                <label>提现密码</label>
+                                <input type="password" class="mui-input-password" placeholder="请输入提现密码">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="mui-content-padded" style=" margin:30px 10px;">
+                <button id="withmoney_btn" onclick="cashMoney()" class="mui-btn mui-btn-primary mui-btn-block">确定</button>
+            </div>
+        </div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-1.11.2.min.js"></script>
+	<script src="../../js/mui.picker.js"></script>
+    <script src="../../js/mui.poppicker.js"></script>
+    <script src="../../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/app.js"></script>
+	<script src="../../js/config.js"></script>
+    <script src="../../js/page/Withdraw/Withdrawals.js"></script>
+    
+</html>

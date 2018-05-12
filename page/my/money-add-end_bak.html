@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>订单确认_鸿宝财富</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--icon-->
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">订单确认</h1>
+	</header>
+		<div class="mui-content" style="padding-top: 44px;">
+        	<div class="money-add-top">
+            	<span class="index-my-money-title">订单金额(元)</span>
+                <span class="index-my-money-number">0</span>
+            </div>
+            <ul class="mui-table-view" style="margin-top:10px;">
+                <li class="mui-table-view-cell">
+                    <span class="mui-input-row-left">商品名称</span>
+                    <span class="mui-input-row-right">购买</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <span class="mui-input-row-left">商户名称</span>
+                    <span class="mui-input-row-right">鸿宝财富</span>
+                </li>
+            </ul>
+            <ul class="mui-table-view" style=" margin-top:10px;">
+                <li class="mui-table-view-cell">
+                    <div class="mui-collapse-content">
+                        <div class="mui-input-group">
+                            <div class="mui-input-row mui-radio money-add-label-img">
+                                <label class="money-add-label-img">
+                                    <img src="../../images/money-add-yl.gif">
+                                    <div class="money-add-label-title">
+                                    	<div class="money-add-label-title-name"><span class="float-l">快捷支付（通道一）</span><span class="help-nwe-icon">推荐</span></div>
+                                    	<div class="money-add-label-title-info">快捷安全，24小时支付（单笔限额5000元）</div>
+                                    </div>
+                                </label>
+                                <input name="radioPayType" type="radio" checked="checked" value="0">
+                            </div>
+
+							 <div class="mui-input-row mui-radio money-add-label-img">
+                                <label class="money-add-label-img">
+                                    <img src="../../images/money-add-yl.gif">
+                                    <div class="money-add-label-title">
+                                    	<div class="money-add-label-title-name"><span class="float-l">快捷支付（通道二）</span><span class="help-nwe-icon">推荐</span></div>
+                                    	<div class="money-add-label-title-info">快捷安全，24小时支付（单笔限额3000元）</div>
+                                    </div>
+                                </label>
+                                <input name="radioPayType" type="radio" value="0">
+                            </div>
+
+                            <div class="mui-input-row mui-radio money-add-label-img">
+                                <label class="money-add-label-img">
+                                    <img src="../../images/money-add-wx.gif">
+                                    <div class="money-add-label-title">
+                                    	<div class="money-add-label-title-name"><span class="float-l">微信支付</span></div>
+                                    	<div class="money-add-label-title-info">微信支付，方便快捷</div>
+                                    </div>
+                                </label>
+                                <input name="radioPayType" type="radio" value="wxcode">
+                          </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="mui-content-padded" style=" margin:30px 10px;">
+                <button type="button" onClick="commit()" class="mui-btn mui-btn-primary mui-btn-block">立即付款</button>
+            </div>
+        </div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/app.js"></script>
+	<script src="../../js/config.js"></script>
+    <script src="../../js/page/my/money-add-end.js"></script>
+</html>

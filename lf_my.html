@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鸿宝财富</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+			<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+	</head>
+	<body>
+		<div class="mui-content">			
+                <div class="index-top-bg">
+                	<div class="index-my-money">
+                    	<span class="index-my-money-title">账户余额(元)</span>
+                        <span class="index-my-money-number">0.00</span>
+                    </div>
+                    <div class="index-my-money-button">
+                    	<div class="index-my-button-half"><a class="my-money-button in-money">充值</a></div>
+                    	<div class="index-my-button-half"><a class="my-money-button out-money">提现</a></div>
+                    </div>
+                </div>
+				<ul class="mui-table-view">
+                    <li class="mui-table-view-cell transaction">
+                        <a class="mui-navigate-right">
+                            <span class="iconfont icon-my-transaction my-icon"></span>交易历史
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell Withdrawals">
+                        <a class="mui-navigate-right">
+                            <span class="iconfont icon-my-Withdrawals my-icon"></span>提现列表
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell myrecord">
+                        <a class="mui-navigate-right">
+                            <span class="iconfont icon-my-Record my-icon"></span>收支明细
+                        </a>
+                    </li>
+                </ul>
+                <ul class="mui-table-view" style="margin-top: 10px;">
+                    <li class="mui-table-view-cell password">
+                        <a class="mui-navigate-right">
+                            <span class="iconfont icon-my-Password my-icon"></span>修改密码
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell shares">
+                        <a class="mui-navigate-right">
+                            <span class="iconfont icon-my-share my-icon"></span>推广分享
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell clause">
+                        <a class="mui-navigate-right">
+                            <span class="iconfont icon-my-clause my-icon"></span>服务条款
+                        </a>
+                    </li>
+                </ul>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/page/my.js"></script>
+</html>
