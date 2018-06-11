@@ -14,7 +14,7 @@
 * 无需升级
 {"status":0}
  */
-var server = API.API_ROOT + "/static/check.json"; //获取升级描述文件服务器地址
+var server = API.API_ROOT ; //+ "/static/check.json"; //获取升级描述文件服务器地址
 
 function update() {
 	mui.getJSON(server, {

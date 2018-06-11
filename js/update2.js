@@ -14,7 +14,7 @@ if(window.plus){
 }
 
 // 检测更新
-var checkUrl=API.API_ROOT + "/static/app/check.json?time="+new Date().getTime();
+var checkUrl=API.API_ROOT ; //+ "/static/app/check.json?time="+new Date().getTime();
 function checkUpdate() {
 	mui.getJSON(checkUrl, {
 		"appid": plus.runtime.appid,
